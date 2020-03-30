@@ -2,7 +2,7 @@ express =  require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const knex = require('./knex') a
+const knex = require('./knex') 
 
 const PORT = process.env.PORT || 5000;
 
