@@ -2,7 +2,7 @@ express =  require('express')
 const app = express()
 const cors = require('cors')
 const bodyParser = require('body-parser')
-const knex = require('./knex')
+const knex = require('./knex') a
 
 const PORT = process.env.PORT || 5000;
 
@@ -23,14 +23,13 @@ app.get('/', (req,res) => {
 app.post('/', (req,res) => {
 
     asteriodScore = parseInt(req.body.score)
-
     displayRequest(req)
     knex('scores')
     .insert({ score: asteriodScore })
-    .then(res.json({ststus: "all good famalam"}))
+    .then(res.json({status: "all good famalam"}))
 
 })
 
 function displayRequest(req) {
-    console.log(req.body)
+    console.log(req.rawHeaders)
 }
